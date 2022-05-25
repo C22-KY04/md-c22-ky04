@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:icon="@drawable/ic_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always" />
+
+    <group android:menuCategory="container">
+        <item android:id="@+id/menu_verify"
+            android:title="@string/menu_verify"
+            android:icon = "@drawable/ic_add_card"
+            app:showAsAction="always" />
+
+        <item android:id="@+id/menu_languages"
+            android:title="@string/menu_languages" />
+
+        <item android:id="@+id/menu_logout"
+            android:title="@string/menu_logout"
+            />
+    </group>
+</menu>

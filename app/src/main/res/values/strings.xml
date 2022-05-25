@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TravelokaOCR</string>
+    <string name="app_name">Traveloka OCR</string>
 
     <string name="login">Login</string>
     <string name="register">Register</string>
@@ -20,4 +20,11 @@
     <string name="data_secure">Your data will be protected and will not be shared.</string>
 
     <string name="line">line</string>
+
+    <string name="menu_verify">Verify ID Card</string>
+    <string name="menu_languages">Language Settings</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_search">Search</string>
+
+    <string name="search_hint">Find KTP ...</string>
 </resources>
