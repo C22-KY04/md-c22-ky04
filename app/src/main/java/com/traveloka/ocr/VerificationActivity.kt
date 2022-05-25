@@ -16,7 +16,7 @@ class VerificationActivity : AppCompatActivity() {
         binding = ActivityVerificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        title = "Verify KTP"
+        title = getString(R.string.verify_ktp)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
