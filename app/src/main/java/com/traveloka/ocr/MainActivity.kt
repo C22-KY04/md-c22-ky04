@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btLogin.setOnClickListener {
-            val intent = Intent(this, VerificationActivity::class.java)
+            val intent = Intent(this, VerifiedActivity::class.java)
             startActivity(intent)
         }
     }

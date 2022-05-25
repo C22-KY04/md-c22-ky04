@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelokaOCR">
         <activity
+            android:name=".VerifiedActivity"
+            android:exported="false" />
+        <activity
             android:name=".VerificationActivity"
             android:exported="false" />
         <activity

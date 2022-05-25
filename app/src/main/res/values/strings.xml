@@ -25,6 +25,10 @@
     <string name="menu_languages">Language Settings</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_search">Search</string>
-
     <string name="search_hint">Find KTP ...</string>
+    <string name="verify_ktp">Verify KTP</string>
+    <string name="gallery_or_camera">Choose file from gallery or use camera to take picture of your KTP</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="ktp_verified">KTP Has Been Verified</string>
 </resources>
