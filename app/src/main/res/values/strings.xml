@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">TravelokaOCR</string>
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="other">Or login with</string>
+    <string name="login_google">Continue with Google</string>
+    <string name="login_fb">Sign In with Facebook</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <string name="dont_have_acount">Dont have acount?</string>
+    <string name="register_now">Register now</string>
+
+    <string name="already_have_acc">Already have an account?</string>
+    <string name="login_now">Login now</string>
+
+    <string name="data_secure">Your data will be protected and will not be shared.</string>
+
+    <string name="line">line</string>
 </resources>
