@@ -4,13 +4,12 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Rational
+import android.view.Surface
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.traveloka.ocr.databinding.ActivityCameraBinding
@@ -41,6 +40,9 @@ class CameraActivity : AppCompatActivity() {
 
         cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+
+            val viewPort = ViewPort.Builder(Rational(300, 220), Surface.ROTATION_0).build()
+
             val preview = Preview.Builder()
                 .build()
                 .also {
@@ -49,14 +51,22 @@ class CameraActivity : AppCompatActivity() {
 
             imageCapture = ImageCapture.Builder().build()
 
+            val useCaseGroup = UseCaseGroup.Builder()
+                .addUseCase(preview)
+                .addUseCase(imageCapture!!)
+                .setViewPort(viewPort)
+                .build()
+
             try {
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(
                     this,
                     cameraSelector,
-                    preview,
-                    imageCapture
+                    useCaseGroup,
+                    //preview,
+                    //imageCapture
                 )
+
             } catch (exc: Exception) {
                 Toast.makeText(
                     this@CameraActivity,
