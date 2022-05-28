@@ -32,4 +32,5 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="ktp_verified">KTP Has Been Verified</string>
+    <string name="scan_your_ktp">Scan the front side of your KTP</string>
 </resources>

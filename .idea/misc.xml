@@ -6,8 +6,10 @@
         <entry key="app/src/main/res/drawable-v24/background_button3.xml" value="0.2685" />
         <entry key="app/src/main/res/drawable-v24/ic_fb.xml" value="0.2685" />
         <entry key="app/src/main/res/drawable-v24/ic_lock.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/camera_border.xml" value="0.213" />
         <entry key="app/src/main/res/drawable/ic_add_card.xml" value="0.2685" />
-        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/ic_capture.xml" value="0.213" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3351449275362319" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.33" />
