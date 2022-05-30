@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "45596774087",
+    "project_id": "capstone-project-3729b",
+    "storage_bucket": "capstone-project-3729b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45596774087:android:8322b60b9f4b4f75d738e2",
+        "android_client_info": {
+          "package_name": "com.traveloka.ocr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45596774087-9tdv2jelevqmo1ol470t3uklksl20c15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.traveloka.ocr",
+            "certificate_hash": "59b1769ef01c0acb7d134591dc4c5564a89a5e7e"
+          }
+        },
+        {
+          "client_id": "45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz3QBj2tP9zko8MsteZEEf-42wdhwofBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
