@@ -61,6 +61,7 @@ class RegisterActivity : AppCompatActivity() {
                             if (task.isSuccessful) {
                                 Log.d(TAG, "User profile updated.")
                                 startActivity(Intent(applicationContext, LoginActivity::class.java))
+                                finish()
                             } else {
                                 Toast.makeText(baseContext, "User profile update failed.", Toast.LENGTH_SHORT).show()
                             }

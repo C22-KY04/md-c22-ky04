@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -59,9 +60,21 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu_logout -> {
-                Firebase.auth.signOut()
+                AlertDialog.Builder(this)
+                    .setTitle("Logout")
+                    .setMessage("Do you want to logout?")
+                    .setPositiveButton("Yes"){_, _ -> signOut()
+                        Toast.makeText(applicationContext, "Succeed", Toast.LENGTH_LONG).show()}
+                    .setNegativeButton("No"){_,_->}
+                    .show()
             }
         }
         return true
+    }
+
+    private fun signOut() {
+        Firebase.auth.signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }

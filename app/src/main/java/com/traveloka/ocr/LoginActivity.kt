@@ -72,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun reload() {
         startActivity(Intent(applicationContext, MainActivity::class.java))
+        finish()
     }
 
 }
