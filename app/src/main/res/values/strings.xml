@@ -28,7 +28,7 @@
     <string name="search_hint">Search name or NIK ...</string>
 
     <string name="verify_ktp">Verify KTP</string>
-    <string name="gallery_or_camera">Choose file from gallery or use camera to take picture of your KTP</string>
+    <string name="use_camera">Use camera to take picture of your KTP</string>
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="ktp_verified">KTP Has Been Verified</string>
