@@ -90,7 +90,7 @@
         android:fontFamily="@font/inter_medium"
         android:text="@string/already_have_acc"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_in" />
+        app:layout_constraintStart_toStartOf="@+id/btn_regis" />
 
     <TextView
         android:id="@+id/textView2"
@@ -107,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pass_regis" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="56dp"

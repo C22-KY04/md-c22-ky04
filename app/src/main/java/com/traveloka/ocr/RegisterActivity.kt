@@ -40,6 +40,11 @@ class RegisterActivity : AppCompatActivity() {
 //                ).show()
 //            }
         }
+
+        binding.textView3.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun regis(name: String, email: String, password: String) {
@@ -91,6 +96,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun reload() {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        startActivity(Intent(applicationContext, LoginActivity::class.java))
     }
 }
