@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu_languages -> {
-                //
+                // Test
             }
 
             R.id.menu_logout -> {
