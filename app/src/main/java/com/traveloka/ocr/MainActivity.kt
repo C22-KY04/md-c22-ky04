@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        showLoading(false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                     .setTitle("Logout")
                     .setMessage("Do you want to logout?")
                     .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Succeed", Toast.LENGTH_LONG).show()}
+                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
                     .setNegativeButton("No"){_,_->}
                     .show()
             }
@@ -76,5 +79,13 @@ class MainActivity : AppCompatActivity() {
         Firebase.auth.signOut()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 }

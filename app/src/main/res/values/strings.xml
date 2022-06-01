@@ -41,4 +41,6 @@
     <string name="camera">Camera</string>
     <string name="ktp_verified">KTP Has Been Verified</string>
     <string name="scan_your_ktp">Scan the front side of your KTP</string>
+
+    <string name="your_web_client_id">"45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com"</string>
 </resources>
