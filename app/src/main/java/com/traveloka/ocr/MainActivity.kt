@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
                     .setTitle("Logout")
                     .setMessage("Do you want to logout?")
                     .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Succeed", Toast.LENGTH_LONG).show()}
+                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
                     .setNegativeButton("No"){_,_->}
                     .show()
             }
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.GONE
         }
     }
-
+    
     companion object {
         const val TAG = "MainActivity"
     }
