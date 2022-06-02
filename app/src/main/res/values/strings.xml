@@ -20,10 +20,14 @@
     <string name="login_success">Login Success</string>
     <string name="login_fail">Login Failed</string>
 
-    <string name="form_not_null">Form cant be empty</string>
+    <string name="form_not_null">Form cannot be empty</string>
 
     <string name="already_have_acc">Already have an account?</string>
     <string name="login_now">Login now</string>
+
+    <string name="facebook_app_id">724703425240398</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">8100ad10640c5082f81bc30e09e9eec3</string>
 
     <string name="data_secure">Your data will be protected and will not be shared.</string>
 

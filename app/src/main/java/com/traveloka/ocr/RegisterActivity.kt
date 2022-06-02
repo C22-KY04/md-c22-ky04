@@ -25,6 +25,7 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         showLoading(false)
+        supportActionBar?.setTitle(R.string.register);
 
         binding.btnRegis.setOnClickListener {
             val name = binding.nameRegis.text.toString()
