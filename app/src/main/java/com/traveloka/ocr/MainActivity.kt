@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         user!!.getIdToken(true).addOnSuccessListener { result ->
             idToken = result.token.toString()
             //Do whatever
-            displayKtpList(idToken)
+            displayKtpList("Bearer $idToken")
             Log.d("Main Activity", "onCreate: $idToken")
         }
 
@@ -49,22 +49,22 @@ class MainActivity : AppCompatActivity() {
         showLoading(true)
 
         val client = ApiConfig.getApiService().getKtp(idToken)
-        client.enqueue(object : Callback<List<KtpResponse>> {
-            override fun onResponse(call: Call<List<KtpResponse>>, response: Response<List<KtpResponse>>) {
+        client.enqueue(object : Callback<KtpResponse> {
+            override fun onResponse(call: Call<KtpResponse>, response: Response<KtpResponse>) {
                 Log.d(TAG, "onResponse: $response")
                 showLoading(false)
                 if(response.isSuccessful) {
                     val responseBody = response.body()
                     Log.d(TAG, "onResponse: $responseBody")
                     if(responseBody != null) {
-                        setKtpData(responseBody)
+                        setKtpData(responseBody.data)
                     }
                 } else {
                     Log.e(TAG, "onResponse: ${response.message()}")
                 }
             }
 
-            override fun onFailure(call: Call<List<KtpResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<KtpResponse>, t: Throwable) {
                 showLoading(false)
                 Log.d(TAG, "onFailure: ${t.message}")
             }
@@ -72,12 +72,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun setKtpData(ktpResponse: List<KtpResponse>) {
+    private fun setKtpData(ktpResponse: List<DataItem>) {
         val listOfKtp = ArrayList<Ktp>()
         for(item in ktpResponse) {
             val ktp = Ktp(
                 item.idNumber,
-                item.fullName
+                item.name
             )
             listOfKtp.add(ktp)
         }

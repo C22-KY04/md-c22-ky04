@@ -8,5 +8,5 @@ interface ApiService {
     @GET("id_cards")
     fun getKtp(
         @Header("Authorization") header: String
-    ) : Call<List<KtpResponse>>
+    ) : Call<KtpResponse>
 }
