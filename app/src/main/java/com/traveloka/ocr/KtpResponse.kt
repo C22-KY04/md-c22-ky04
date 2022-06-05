@@ -1,6 +1,8 @@
 package com.traveloka.ocr
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class KtpResponse(
 
@@ -14,6 +16,7 @@ data class KtpResponse(
 	val status: String
 )
 
+@Parcelize
 data class DataItem(
 
 	@field:SerializedName("id_number")
@@ -69,4 +72,4 @@ data class DataItem(
 
 	@field:SerializedName("village")
 	val village: String
-)
+): Parcelable

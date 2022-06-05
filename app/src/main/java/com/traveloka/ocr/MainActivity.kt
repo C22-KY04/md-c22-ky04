@@ -73,11 +73,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setKtpData(ktpResponse: List<DataItem>) {
-        val listOfKtp = ArrayList<Ktp>()
+        val listOfKtp = ArrayList<DataItem>()
         for(item in ktpResponse) {
-            val ktp = Ktp(
+            val ktp = DataItem(
                 item.idNumber,
-                item.name
+                item.address,
+                item.occupation,
+                item.gender,
+                item.expiryDate,
+                item.religion,
+                item.uid,
+                item.maritalStatus,
+                item.province,
+                item.nationality,
+                item.attachment,
+                item.subdistrict,
+                item.district,
+                item.bloodType,
+                item.name,
+                item.placeDateOfBirth,
+                item.neighborhood,
+                item.village
             )
             listOfKtp.add(ktp)
         }
