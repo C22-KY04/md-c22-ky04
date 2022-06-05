@@ -100,8 +100,10 @@ class VerificationActivity : AppCompatActivity() {
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
-            val result = BitmapFactory.decodeFile(myFile.path)
-
+            val result = rotateBitmap(
+                BitmapFactory.decodeFile(myFile.path),
+                true
+            )
             binding.imgCard.setImageBitmap(result)
         }
     }
