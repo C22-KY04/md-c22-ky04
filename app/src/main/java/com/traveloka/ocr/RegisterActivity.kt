@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -26,6 +27,8 @@ class RegisterActivity : AppCompatActivity() {
         auth = Firebase.auth
         showLoading(false)
         supportActionBar?.setTitle(R.string.register);
+        emailValidate()
+        passwordValidate()
 
         binding.btnRegis.setOnClickListener {
             val name = binding.nameRegis.text.toString()
@@ -74,6 +77,39 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
     }
+
+    private fun emailValidate() {
+        binding.emailRegis.setOnFocusChangeListener { _, focused ->
+            if (!focused) {
+                binding.emailRegis.error = validEmail()
+            }
+        }
+    }
+
+    private fun validEmail(): String? {
+        val emailValue = binding.emailRegis.text.toString()
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailValue).matches()) {
+            return "Invalid Email Address"
+        }
+        return null
+    }
+
+    private fun passwordValidate() {
+        binding.passRegis.setOnFocusChangeListener { _, focused ->
+            if (!focused) {
+                binding.passRegis.error = validPass()
+            }
+        }
+    }
+
+    private fun validPass(): String? {
+        val passValue = binding.passRegis.text.toString()
+        if (passValue.length < 6) {
+            return "Minimum 6 Character Password"
+        }
+        return null
+    }
+
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {

@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.facebook.*
@@ -36,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
         auth = Firebase.auth
         showLoading(false)
         supportActionBar?.setTitle(R.string.login);
+        emailValidate()
+        passwordValidate()
 
         binding.btnSignIn.setOnClickListener {
             val email = binding.emailLogin.text.toString()
@@ -54,7 +57,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonFb.setOnClickListener{
             binding.buttonFb2.callOnClick()
-            showLoading(true)
         }
 
         binding.toRegister.setOnClickListener {
@@ -78,6 +80,7 @@ class LoginActivity : AppCompatActivity() {
             FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
+                showLoading(true)
             }
             override fun onCancel() {
                 Log.d(TAG, "facebook:onCancel")
@@ -107,7 +110,6 @@ class LoginActivity : AppCompatActivity() {
 
     //login with google
     private fun googleSignIn() {
-        showLoading(true)
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
@@ -135,6 +137,7 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val account = task.getResult(ApiException::class.java)!!
                 firebaseAithWithGoogle(account.idToken!!)
+                showLoading(true)
             } catch (e: ApiException) {
                 Log.w(TAG, "Google Sign In Failed", e)
             }
@@ -164,6 +167,38 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    private fun emailValidate() {
+        binding.emailLogin.setOnFocusChangeListener { _, focused ->
+            if (!focused) {
+                binding.emailLogin.error = validEmail()
+            }
+        }
+    }
+
+    private fun validEmail(): String? {
+        val emailValue = binding.emailLogin.text.toString()
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailValue).matches()) {
+            return "Invalid Email Address"
+        }
+        return null
+    }
+
+    private fun passwordValidate() {
+        binding.passLogin.setOnFocusChangeListener { _, focused ->
+            if (!focused) {
+                binding.passLogin.error = validPass()
+            }
+        }
+    }
+
+    private fun validPass(): String? {
+        val passValue = binding.passLogin.text.toString()
+        if (passValue.length < 6) {
+            return "Minimum 6 Character Password"
+        }
+        return null
     }
 
     public override fun onStart() {

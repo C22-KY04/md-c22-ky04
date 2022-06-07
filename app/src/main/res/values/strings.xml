@@ -20,7 +20,7 @@
     <string name="login_success">Login Success</string>
     <string name="login_fail">Login Failed</string>
 
-    <string name="form_not_null">Form cannot be empty</string>
+    <string name="form_not_null">Field cannot be empty</string>
 
     <string name="already_have_acc">Already have an account?</string>
     <string name="login_now">Login now</string>

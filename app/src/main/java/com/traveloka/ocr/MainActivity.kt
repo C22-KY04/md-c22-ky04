@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -152,6 +153,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun signOut() {
         Firebase.auth.signOut()
+        //for facebook
+        LoginManager.getInstance().logOut();
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
