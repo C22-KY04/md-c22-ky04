@@ -3,6 +3,7 @@ package com.traveloka.ocr
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.exifinterface.media.ExifInterface
 import com.traveloka.ocr.databinding.ActivityVerificationBinding
 import java.io.File
 
@@ -100,14 +102,31 @@ class VerificationActivity : AppCompatActivity() {
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
-            val result = BitmapFactory.decodeFile(myFile.path)
+
+            val bitmap = BitmapFactory.decodeFile(myFile.path)
+            val ei = ExifInterface(myFile.path)
+            val orientation = ei.getAttributeInt(
+                ExifInterface.TAG_ORIENTATION,
+                ExifInterface.ORIENTATION_UNDEFINED
+            )
+
+            val rotatedBitmap: Bitmap = when(orientation) {
+                ExifInterface.ORIENTATION_ROTATE_90 -> rotateBitmap(bitmap, 90f, true)
+                ExifInterface.ORIENTATION_ROTATE_180 -> rotateBitmap(bitmap, 180f, true)
+                ExifInterface.ORIENTATION_ROTATE_270 -> rotateBitmap(bitmap, 270f, true)
+                else -> bitmap
+            }
+            binding.imgCard.setImageBitmap(rotatedBitmap)
+
+//            val result = BitmapFactory.decodeFile(myFile.path)
 
 //            val result = rotateBitmap(
 //                BitmapFactory.decodeFile(myFile.path),
+//                90f,
 //                true
 //            )
 
-            binding.imgCard.setImageBitmap(result)
+//            binding.imgCard.setImageBitmap(result)
         }
     }
 
