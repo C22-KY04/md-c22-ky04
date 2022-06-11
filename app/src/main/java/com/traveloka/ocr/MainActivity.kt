@@ -31,12 +31,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var idToken = ""
+//        var idToken = ""
         val user = FirebaseAuth.getInstance().currentUser
         user!!.getIdToken(true).addOnSuccessListener { result ->
-            idToken = result.token.toString()
+            idToken = "Bearer " + result.token.toString()
+            displayKtpList(idToken)
             //Do whatever
-            displayKtpList("Bearer $idToken")
+//            displayKtpList("Bearer $idToken")
             Log.d("Main Activity", "onCreate: $idToken")
         }
 
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "displayKtpList: $idToken")
         showLoading(true)
 
-        val client = ApiConfig.getApiService().getKtp(idToken)
+        val client = ApiConfig.getApiService().searchKtp(idToken, name)
         client.enqueue(object : Callback<KtpResponse> {
             override fun onResponse(call: Call<KtpResponse>, response: Response<KtpResponse>) {
                 Log.d(TAG, "onResponse: $response")
@@ -62,6 +63,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else {
                     Log.e(TAG, "onResponse: ${response.message()}")
+                    Toast.makeText(this@MainActivity, "Data Not Found", Toast.LENGTH_SHORT).show()
+                    setKtpData(emptyList())
                 }
             }
 
@@ -114,7 +117,9 @@ class MainActivity : AppCompatActivity() {
         searchMenu.queryHint = resources.getString(R.string.search_hint)
         searchMenu.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Toast.makeText(this@MainActivity, query, Toast.LENGTH_SHORT).show()
+                name = query.toString()
+                displayKtpList(idToken)
+//                Toast.makeText(this@MainActivity, query, Toast.LENGTH_SHORT).show()
                 searchMenu.clearFocus()
                 return true
             }
@@ -169,5 +174,7 @@ class MainActivity : AppCompatActivity() {
     
     companion object {
         const val TAG = "MainActivity"
+        var name = ""
+        var idToken = ""
     }
 }

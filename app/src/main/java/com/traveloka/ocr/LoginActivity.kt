@@ -99,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     showLoading(false)
-                    Toast.makeText(baseContext, getString(R.string.login_success) + " UID = $userUid", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                     reload()
                 } else {
                     showLoading(false)
