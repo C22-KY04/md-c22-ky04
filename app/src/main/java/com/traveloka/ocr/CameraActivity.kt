@@ -1,15 +1,19 @@
 package com.traveloka.ocr
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Rational
 import android.view.Surface
+import android.view.Surface.*
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.camera.core.*
+import androidx.camera.core.impl.utils.Exif
+import androidx.camera.core.internal.compat.workaround.ExifRotationAvailability
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.traveloka.ocr.databinding.ActivityCameraBinding
@@ -49,7 +53,9 @@ class CameraActivity : AppCompatActivity() {
                     it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
                 }
 
-            imageCapture = ImageCapture.Builder().build()
+            imageCapture = ImageCapture.Builder()
+                .setTargetRotation(ROTATION_0)
+                .build()
 
             val useCaseGroup = UseCaseGroup.Builder()
                 .addUseCase(preview)
@@ -81,6 +87,7 @@ class CameraActivity : AppCompatActivity() {
         val imageCapture = imageCapture ?: return
         val photoFile = createFile(application)
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+
         imageCapture.takePicture(
             outputOptions,
             ContextCompat.getMainExecutor(this),

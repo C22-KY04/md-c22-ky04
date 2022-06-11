@@ -19,12 +19,14 @@
             android:exported="false" />
         <activity
             android:name=".CameraActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".VerifiedActivity"
             android:exported="false" />
         <activity
             android:name=".VerificationActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
