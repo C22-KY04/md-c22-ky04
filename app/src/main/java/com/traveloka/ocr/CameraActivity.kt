@@ -83,15 +83,10 @@ class CameraActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-//    @SuppressLint("RestrictedApi")
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
         val photoFile = createFile(application)
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
-        val rotation = imageCapture.targetRotation
-
-//        val exif = Exif.createFromFile(photoFile)
-//        val rotation = exif.rotation
 
         imageCapture.takePicture(
             outputOptions,
@@ -107,7 +102,6 @@ class CameraActivity : AppCompatActivity() {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val intent = Intent()
                     intent.putExtra("picture", photoFile)
-//                    Toast.makeText(this@CameraActivity, "Rotasi = ${imageCapture.targetRotation}", Toast.LENGTH_LONG).show()
                     setResult(VerificationActivity.CAMERA_X_RESULT, intent)
                     finish()
                 }

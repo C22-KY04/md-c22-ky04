@@ -117,16 +117,6 @@ class VerificationActivity : AppCompatActivity() {
                 else -> bitmap
             }
             binding.imgCard.setImageBitmap(rotatedBitmap)
-
-//            val result = BitmapFactory.decodeFile(myFile.path)
-
-//            val result = rotateBitmap(
-//                BitmapFactory.decodeFile(myFile.path),
-//                90f,
-//                true
-//            )
-
-//            binding.imgCard.setImageBitmap(result)
         }
     }
 
