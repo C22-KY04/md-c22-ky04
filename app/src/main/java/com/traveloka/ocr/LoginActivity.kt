@@ -61,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.toRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            finish()
         }
 
         //google
@@ -101,6 +102,7 @@ class LoginActivity : AppCompatActivity() {
                     showLoading(false)
                     Toast.makeText(baseContext, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                     reload()
+                    finish()
                 } else {
                     showLoading(false)
                     Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
@@ -121,6 +123,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(baseContext, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+                    finish()
                 } else {
                     Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
                 }
@@ -153,6 +156,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(baseContext, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+                    finish()
                 } else {
                     Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
                 }

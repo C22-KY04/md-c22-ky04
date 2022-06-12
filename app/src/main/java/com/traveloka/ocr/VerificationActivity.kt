@@ -11,9 +11,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.exifinterface.media.ExifInterface
+import com.facebook.login.LoginManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.traveloka.ocr.databinding.ActivityVerificationBinding
 import java.io.File
 
@@ -64,7 +68,13 @@ class VerificationActivity : AppCompatActivity() {
             }
 
             R.id.menu_logout -> {
-                //
+                AlertDialog.Builder(this)
+                    .setTitle("Logout")
+                    .setMessage("Do you want to logout?")
+                    .setPositiveButton("Yes"){_, _ -> signOut()
+                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
+                    .setNegativeButton("No"){_,_->}
+                    .show()
             }
         }
         return true
@@ -87,6 +97,15 @@ class VerificationActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun signOut() {
+        Firebase.auth.signOut()
+        //for facebook
+        LoginManager.getInstance().logOut();
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }

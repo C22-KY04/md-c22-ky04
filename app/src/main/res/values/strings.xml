@@ -45,6 +45,7 @@
     <string name="camera">Camera</string>
     <string name="ktp_verified">KTP Has Been Verified</string>
     <string name="scan_your_ktp">Scan the front side of your KTP</string>
+    <string name="gambar">"gambar"</string>
 
     //Detail
     <string name="dt_nama">Nama :</string>
