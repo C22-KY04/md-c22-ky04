@@ -41,6 +41,10 @@ class VerificationActivity : AppCompatActivity() {
         }
 
         binding.btnCamera.setOnClickListener { startCameraX() }
+        binding.btnProcess.setOnClickListener {
+            val intent = Intent(this, PreviewActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -101,7 +105,7 @@ class VerificationActivity : AppCompatActivity() {
     private fun signOut() {
         Firebase.auth.signOut()
         //for facebook
-        LoginManager.getInstance().logOut();
+        LoginManager.getInstance().logOut()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
