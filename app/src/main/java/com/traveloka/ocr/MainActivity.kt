@@ -86,7 +86,6 @@ class MainActivity : AppCompatActivity() {
                 item.gender,
                 item.expiryDate,
                 item.religion,
-                item.uid,
                 item.maritalStatus,
                 item.province,
                 item.nationality,

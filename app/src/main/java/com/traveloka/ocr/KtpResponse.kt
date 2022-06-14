@@ -37,9 +37,6 @@ data class DataItem(
 	@field:SerializedName("religion")
 	val religion: String,
 
-	@field:SerializedName("uid")
-	val uid: String,
-
 	@field:SerializedName("marital_status")
 	val maritalStatus: String,
 
