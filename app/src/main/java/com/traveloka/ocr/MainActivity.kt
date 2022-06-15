@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "displayKtpList: $idToken")
         showLoading(true)
 
-        val client = ApiConfig.getApiService().searchKtp(idToken, name)
+        val client = ApiConfig.getIdCardsApiService().getIdCardList(idToken, name)
         client.enqueue(object : Callback<KtpResponse> {
             override fun onResponse(call: Call<KtpResponse>, response: Response<KtpResponse>) {
                 Log.d(TAG, "onResponse: $response")

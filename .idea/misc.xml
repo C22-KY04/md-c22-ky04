@@ -59,7 +59,11 @@
         <entry key="..\:/TestAndroidStudio/md-c22-ky04_prasetya/app/src/main/res/layout/item_row.xml" value="0.19581017528858485" />
         <entry key="..\:/TestAndroidStudio/md-c22-ky04_prasetya/app/src/main/res/menu/option_menu.xml" value="0.19581017528858485" />
         <entry key="app/src/main/res/drawable/camera_border.xml" value="0.215" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17699871740059855" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_preview.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_verification.xml" value="0.17699871740059855" />
         <entry key="app/src/main/res/layout/item_row.xml" value="0.33" />
       </map>
     </option>

@@ -7,8 +7,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -19,15 +21,23 @@ import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.traveloka.ocr.databinding.ActivityVerificationBinding
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 
 class VerificationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerificationBinding
     private lateinit var googleSignInClient: GoogleSignInClient
+    private var getFile: File? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +45,13 @@ class VerificationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         title = getString(R.string.verify_ktp)
+        showLoading(false)
+
+        val user = FirebaseAuth.getInstance().currentUser
+        user!!.getIdToken(true).addOnSuccessListener { result ->
+            idToken = "Bearer " + result.token.toString()
+            Log.d(TAG, "onCreate: $idToken")
+        }
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
@@ -45,6 +62,9 @@ class VerificationActivity : AppCompatActivity() {
         }
 
         binding.btnCamera.setOnClickListener { startCameraX() }
+        binding.btnProcess.setOnClickListener {
+            processingOcr()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -105,7 +125,7 @@ class VerificationActivity : AppCompatActivity() {
     private fun signOut() {
         Firebase.auth.signOut()
         //for facebook
-        LoginManager.getInstance().logOut();
+        LoginManager.getInstance().logOut()
         //for google
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.your_web_client_id))
@@ -132,6 +152,7 @@ class VerificationActivity : AppCompatActivity() {
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
+            getFile = myFile
 
             val bitmap = BitmapFactory.decodeFile(myFile.path)
             val ei = ExifInterface(myFile.path)
@@ -150,7 +171,59 @@ class VerificationActivity : AppCompatActivity() {
         }
     }
 
+    private fun processingOcr() {
+        if(getFile != null) {
+            showLoading(true)
+            val file = reduceFileImage(getFile as File)
+
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "file",
+                file.name,
+                requestImageFile
+            )
+
+            val client = ApiConfig.getOcrApiService().processingOcr(idToken, imageMultipart)
+            client.enqueue(object: Callback<OcrUploadResponse> {
+                override fun onResponse(
+                    call: Call<OcrUploadResponse>,
+                    response: Response<OcrUploadResponse>
+                ) {
+                    showLoading(false)
+                    Log.d(TAG, "onResponse: $response")
+                    Toast.makeText(this@VerificationActivity, "onResponse = $response", Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this@VerificationActivity, "Token = $idToken", Toast.LENGTH_LONG).show()
+                    val responseBody = response.body()
+                    Toast.makeText(this@VerificationActivity, "Data = $responseBody", Toast.LENGTH_LONG).show()
+                    if(response.isSuccessful && responseBody?.status == "OK") {
+                        Toast.makeText(this@VerificationActivity, "Data = $responseBody", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(this@VerificationActivity, "Fail 1", Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<OcrUploadResponse>, t: Throwable) {
+                    showLoading(false)
+                    Toast.makeText(this@VerificationActivity, "Fail 2", Toast.LENGTH_LONG).show()
+                }
+
+            })
+        } else {
+            Toast.makeText(this@VerificationActivity, "Please take picture of your ID Card first", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if(isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
     companion object {
+        const val TAG = "VerificationActivity"
+        var idToken = ""
         const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10

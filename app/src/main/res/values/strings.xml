@@ -37,7 +37,7 @@
     <string name="menu_languages">Language Settings</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_search">Search</string>
-    <string name="search_hint">Search name or NIK ...</string>
+    <string name="search_hint">Search name ...</string>
 
     <string name="verify_ktp">Verify KTP</string>
     <string name="use_camera">Use camera to take picture of your KTP</string>
@@ -68,5 +68,25 @@
     <string name="ph_job" translatable="false">Placeholder Pekerjaan</string>
     <string name="ph_kwn" translatable="false">Placeholder Kewarganegaraan</string>
 
-    <string name="your_web_client_id" translatable="false">"45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com"</string>
+    <string name="your_web_client_id">"45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com"</string>
+
+    <string name="preview_name">Name</string>
+    <string name="preview_nin">National Identity Number (NIN)</string>
+    <string name="preview_place_and_dob">Place and Date of Birth</string>
+    <string name="preview_gender">Gender</string>
+    <string name="preview_blood_type">Blood Type</string>
+    <string name="preview_address">Address</string>
+    <string name="preview_neighborhood">Neighborhood</string>
+    <string name="preview_village">Rural / Urban Village</string>
+    <string name="preview_sub_district">Sub-District</string>
+    <string name="preview_religion">Religion</string>
+    <string name="preview_marital_status">Marital Status</string>
+    <string name="preview_occupation">Occupation</string>
+    <string name="preview_nationality">Nationality</string>
+    <string name="preview_expired_date">Expired Date</string>
+    <string name="preview_district">District</string>
+    <string name="preview_province">Province</string>
+
+    <string name="process_ocr">Process OCR</string>
+    <string name="save">Save</string>
 </resources>
