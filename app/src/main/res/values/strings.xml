@@ -39,37 +39,38 @@
     <string name="menu_search">Search</string>
     <string name="search_hint">Search name ...</string>
 
-    <string name="verify_ktp">Verify KTP</string>
-    <string name="use_camera">Use camera to take picture of your KTP</string>
+    <string name="verify_id_card">Verify ID Card</string>
+    <string name="use_camera">Use camera to take picture of your ID Card</string>
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
-    <string name="ktp_verified">KTP Has Been Verified</string>
-    <string name="scan_your_ktp">Scan the front side of your KTP</string>
-    <string name="gambar" translatable="false">"gambar"</string>
+    <string name="ktp_verified">ID Card Has Been Verified</string>
+    <string name="scan_your_ktp">Scan the front side of your ID Card</string>
+    <string name="picture">"Picture"</string>
 
     //Detail
-    <string name="dt_nama" translatable="false">Nama :</string>
-    <string name="dt_nik" translatable="false">NIK :</string>
-    <string name="dt_ttl" translatable="false">Tempat, Tanggal Lahir :</string>
-    <string name="dt_gender" translatable="false">Jenis Kelamin :</string>
-    <string name="dt_darah" translatable="false">Golongan Darah :</string>
-    <string name="dt_alamat" translatable="false">Alamat :</string>
-    <string name="dt_agama" translatable="false">Agama :</string>
-    <string name="dt_job" translatable="false">Pekerjaan :</string>
-    <string name="dt_kwn" translatable="false">Kewarganegaraan :</string>
+    <string name="dt_name">Name :</string>
+    <string name="dt_nin">NIN :</string>
+    <string name="dt_place_dob">Place, Date of Birth :</string>
+    <string name="dt_gender">Gender :</string>
+    <string name="dt_blood_type">Golongan Darah :</string>
+    <string name="dt_address">Address :</string>
+    <string name="dt_religion">Religion :</string>
+    <string name="dt_occupation">Occupation :</string>
+    <string name="dt_nationality">Nationality :</string>
 
-    <string name="ph_nama" translatable="false">Placeholder Nama</string>
-    <string name="ph_nik" translatable="false">Placeholder NIK</string>
-    <string name="ph_ttl" translatable="false">Placeholder Tempat, Tanggal Lahir</string>
+    <string name="ph_name" translatable="false">Placeholder Nama</string>
+    <string name="ph_nin" translatable="false">Placeholder NIK</string>
+    <string name="ph_place_dob" translatable="false">Placeholder Tempat, Tanggal Lahir</string>
     <string name="ph_gender" translatable="false">Placeholder Jenis Kelamin</string>
-    <string name="ph_darah" translatable="false">Placeholder Golongan Darah</string>
-    <string name="ph_alamat" translatable="false">Placeholder Alamat</string>
-    <string name="ph_agama" translatable="false">Placeholder Agama</string>
-    <string name="ph_job" translatable="false">Placeholder Pekerjaan</string>
-    <string name="ph_kwn" translatable="false">Placeholder Kewarganegaraan</string>
+    <string name="ph_blood_type" translatable="false">Placeholder Golongan Darah</string>
+    <string name="ph_address" translatable="false">Placeholder Alamat</string>
+    <string name="ph_religion" translatable="false">Placeholder Agama</string>
+    <string name="ph_occupation" translatable="false">Placeholder Pekerjaan</string>
+    <string name="ph_nationality" translatable="false">Placeholder Kewarganegaraan</string>
 
-    <string name="your_web_client_id">"45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com"</string>
+    <string name="your_web_client_id" translatable="false">"45596774087-04lqsefpjm806kio8o1kv2r5efn7g70p.apps.googleusercontent.com"</string>
 
+    // Preview
     <string name="preview_name">Name</string>
     <string name="preview_nin">National Identity Number (NIN)</string>
     <string name="preview_place_and_dob">Place and Date of Birth</string>
@@ -87,6 +88,7 @@
     <string name="preview_district">District</string>
     <string name="preview_province">Province</string>
 
-    <string name="process_ocr">Process OCR</string>
+    <string name="process_ocr">Processing OCR</string>
     <string name="save">Save</string>
+    <string name="detail">ID Card Detail</string>
 </resources>

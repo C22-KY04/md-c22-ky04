@@ -44,7 +44,7 @@ class VerificationActivity : AppCompatActivity() {
         binding = ActivityVerificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        title = getString(R.string.verify_ktp)
+        title = getString(R.string.verify_id_card)
         showLoading(false)
 
         val user = FirebaseAuth.getInstance().currentUser

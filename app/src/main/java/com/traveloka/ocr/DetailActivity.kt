@@ -12,9 +12,11 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        title = getString(R.string.detail)
+
         tampilData()
     }
 
