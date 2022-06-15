@@ -8,6 +8,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="oncr" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -15,21 +16,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97136d31-1d34-480f-a406-d9620513f8f2" name="Default Changelist" comment="Delete field uid in KtpResponse">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="97136d31-1d34-480f-a406-d9620513f8f2" name="Default Changelist" comment="add strings.xml(in) &amp; update logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/ApiConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/ApiConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/ApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/ApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/Utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/VerificationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/VerificationActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9PZPIJ7555P7ZDSC]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/home/aimar/.android/avd/Pixel_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -61,23 +62,11 @@
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
         <option value="resourceFile" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="branch_prasetya_2.0" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -115,16 +104,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../StoryApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-984987585">
       <recent name="com.traveloka.ocr" />
     </key>
     <key name="android.template.-1187986294">
-      <recent name="com.traveloka.ocr" />
-    </key>
-    <key name="android.template.346299906">
       <recent name="com.traveloka.ocr" />
     </key>
     <key name="android.template.1885249820">
@@ -243,35 +229,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654191905028</updated>
     </task>
-    <task id="LOCAL-00007" summary="Change API Endpoint and Test Camera Rotation">
-      <created>1654615571534</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1654615571534</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Test Camera Rotation">
-      <created>1654783900152</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1654783900152</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Fix Camera Rotation">
-      <created>1654930376616</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1654930376616</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Delete field uid in KtpResponse">
-      <created>1655203420834</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1655203420834</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,7 +243,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="aimar" />
                       </list>
                     </value>
                   </entry>
@@ -305,10 +263,8 @@
     <MESSAGE value="implement user auth in Login Activity" />
     <MESSAGE value="add logout feature in main activity and litle update in user auth with email" />
     <MESSAGE value="Add String for detail and main" />
-    <MESSAGE value="Change API Endpoint and Test Camera Rotation" />
-    <MESSAGE value="Test Camera Rotation" />
-    <MESSAGE value="Fix Camera Rotation" />
-    <MESSAGE value="Delete field uid in KtpResponse" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete field uid in KtpResponse" />
+    <MESSAGE value="little update" />
+    <MESSAGE value="add strings.xml(in) &amp; update logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="add strings.xml(in) &amp; update logout" />
   </component>
 </project>
