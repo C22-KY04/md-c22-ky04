@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Traveloka OCR</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="other">Atau masuk dengan</string>
+    <string name="login_google">Masuk dengan Google</string>
+    <string name="login_fb">Masuk dengan Facebook</string>
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="dont_have_account">Tidak punya akun?</string>
+    <string name="register_now">Daftar sekarang</string>
+    <string name="register_success">User baru terdaftar</string>
+    <string name="register_fail">Pendaftaran gagal</string>
+    <string name="login_success">Login berhasil</string>
+    <string name="login_fail">Login gagal</string>
+    <string name="form_not_null">Field tidak boleh kosong</string>
+    <string name="already_have_acc">Sudah punya akun?</string>
+    <string name="login_now">Masuk sekarang</string>
+    <string name="data_secure">Data kamu akan dilindungi dan dirahasiakan</string>
+    <string name="menu_verify">Verifikasi ID Card</string>
+    <string name="menu_languages">Setting Bahasa</string>
+    <string name="menu_logout">Keluar</string>
+    <string name="menu_search">Cari</string>
+    <string name="search_hint">Cari berdasarkan nama</string>
+    <string name="verify_ktp">Verifikasi KTP</string>
+    <string name="use_camera">"Gunakan kamera untuk mengambil gambar KTP "</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="ktp_verified">KTP telah terverifikasi</string>
+    <string name="scan_your_ktp">Memindai dari bagian depan KTP</string>
+</resources>
