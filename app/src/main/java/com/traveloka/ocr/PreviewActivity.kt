@@ -35,11 +35,17 @@ class PreviewActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
         user!!.getIdToken(true).addOnSuccessListener { result ->
             idToken = "Bearer " + result.token.toString()
-//            Toast.makeText(this, "idToken = $idToken", Toast.LENGTH_LONG).show()
-            Log.d("PreviewActivity", "onCreate: $idToken")
+            Log.d(TAG, "onCreate: $idToken")
         }
 
         setOcrPreviewData()
+
+        binding.btnTakePicture.setOnClickListener {
+            val intent = Intent(this, VerificationActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.btnSave.setOnClickListener {
             uploadIdCard()
         }
@@ -71,11 +77,11 @@ class PreviewActivity : AppCompatActivity() {
 
             R.id.menu_logout -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Logout")
-                    .setMessage("Do you want to logout?")
-                    .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
-                    .setNegativeButton("No"){_,_->}
+                    .setTitle(getString(R.string.logout))
+                    .setMessage(getString(R.string.want_to_logout))
+                    .setPositiveButton(getString(R.string.yes)){ _, _ -> signOut()
+                        Toast.makeText(applicationContext, getString(R.string.success_logout), Toast.LENGTH_LONG).show()}
+                    .setNegativeButton(getString(R.string.no)){ _, _->}
                     .show()
             }
         }
@@ -85,7 +91,6 @@ class PreviewActivity : AppCompatActivity() {
     private fun setOcrPreviewData() {
         val image = intent.getStringExtra(IMAGE)
         attachment = image.toString()
-        Toast.makeText(this, "image = $attachment", Toast.LENGTH_SHORT).show()
 
         val name = intent.getStringExtra(NAME)
         val idNumber = intent.getStringExtra(ID_NUMBER)
@@ -175,11 +180,12 @@ class PreviewActivity : AppCompatActivity() {
                 response: Response<IdCardUploadResponse>
             ) {
                 showLoading(false)
-                Toast.makeText(this@PreviewActivity, "onResponse = $response", Toast.LENGTH_LONG).show()
                 val responseBody = response.body()
-                Toast.makeText(this@PreviewActivity, "responseBody = $responseBody", Toast.LENGTH_LONG).show()
                 if(response.isSuccessful && responseBody?.status == "Created") {
                     Toast.makeText(this@PreviewActivity, getString(R.string.id_card_success), Toast.LENGTH_LONG).show()
+                    val intent = Intent(this@PreviewActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(this@PreviewActivity, getString(R.string.id_card_fail), Toast.LENGTH_LONG).show()
                 }
@@ -210,6 +216,8 @@ class PreviewActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val TAG = "PreviewActivity"
+
         const val IMAGE = "image"
         const val NAME = "name"
         const val ID_NUMBER = "id_number"

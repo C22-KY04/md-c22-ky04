@@ -94,11 +94,11 @@ class VerificationActivity : AppCompatActivity() {
 
             R.id.menu_logout -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Logout")
-                    .setMessage("Do you want to logout?")
-                    .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
-                    .setNegativeButton("No"){_,_->}
+                    .setTitle(getString(R.string.logout))
+                    .setMessage(getString(R.string.want_to_logout))
+                    .setPositiveButton(getString(R.string.yes)){ _, _ -> signOut()
+                        Toast.makeText(applicationContext, getString(R.string.success_logout), Toast.LENGTH_LONG).show()}
+                    .setNegativeButton(getString(R.string.no)){ _, _->}
                     .show()
             }
         }
@@ -115,7 +115,7 @@ class VerificationActivity : AppCompatActivity() {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
-                    "Permission is not granted.",
+                    getString(R.string.permission_not_granted),
                     Toast.LENGTH_SHORT
                 ).show()
                 finish()
@@ -192,10 +192,7 @@ class VerificationActivity : AppCompatActivity() {
                 ) {
                     showLoading(false)
                     Log.d(TAG, "onResponse: $response")
-                    Toast.makeText(this@VerificationActivity, "onResponse = $response", Toast.LENGTH_LONG).show()
-//                    Toast.makeText(this@VerificationActivity, "Token = $idToken", Toast.LENGTH_LONG).show()
                     val responseBody = response.body()
-                    Toast.makeText(this@VerificationActivity, "Data = $responseBody", Toast.LENGTH_LONG).show()
                     if(response.isSuccessful && responseBody?.status == "OK") {
                         Toast.makeText(this@VerificationActivity, getString(R.string.ocr_success), Toast.LENGTH_LONG).show()
 
@@ -218,6 +215,7 @@ class VerificationActivity : AppCompatActivity() {
                         intent.putExtra(PreviewActivity.NATIONALITY, responseBody.data.nationality)
                         intent.putExtra(PreviewActivity.EXPIRED_DATE, responseBody.data.expiryDate)
                         startActivity(intent)
+                        finish()
 
                     } else {
                         Toast.makeText(this@VerificationActivity, getString(R.string.ocr_fail), Toast.LENGTH_LONG).show()

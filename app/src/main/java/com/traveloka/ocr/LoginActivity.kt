@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         showLoading(false)
-        supportActionBar?.setTitle(R.string.login);
+        supportActionBar?.setTitle(R.string.login)
         emailValidate()
         passwordValidate()
 
@@ -73,8 +73,8 @@ class LoginActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         //facebook
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
+        FacebookSdk.sdkInitialize(getApplicationContext())
+        AppEventsLogger.activateApp(this)
         callbackManager = CallbackManager.Factory.create()
         binding.buttonFb2.setReadPermissions("email", "public_profile")
         binding.buttonFb2.registerCallback(callbackManager, object :
@@ -139,7 +139,7 @@ class LoginActivity : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 val account = task.getResult(ApiException::class.java)!!
-                firebaseAithWithGoogle(account.idToken!!)
+                firebaseAuthWithGoogle(account.idToken!!)
                 showLoading(true)
             } catch (e: ApiException) {
                 Log.w(TAG, "Google Sign In Failed", e)
@@ -150,8 +150,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     //login with google
-    private fun firebaseAithWithGoogle(idTOken: String) {
-        val credential = GoogleAuthProvider.getCredential(idTOken, null)
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {

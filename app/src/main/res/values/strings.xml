@@ -91,9 +91,19 @@
     <string name="process_ocr">Processing OCR</string>
     <string name="save">Save</string>
     <string name="detail">ID Card Detail</string>
-    <string name="ocr_fail">Fail to process OCR. Try again!</string>
+    <string name="ocr_fail">Failed to process OCR. Try again!</string>
     <string name="ocr_success">OCR processing success!</string>
     <string name="id_card_success">ID Card is uploaded successfully!</string>
-    <string name="id_card_fail">Fail to upload ID Card. Try again!</string>
+    <string name="id_card_fail">Failed to upload ID Card. Try again!</string>
     <string name="take_picture_first">Please take picture of your ID Card first</string>
+    <string name="fail_display_camera">Failed to display camera</string>
+    <string name="fail_take_picture">Failed to take a picture</string>
+    <string name="logout">Logout</string>
+    <string name="want_to_logout">Do you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="success_logout">Account logged out</string>
+    <string name="no">No</string>
+    <string name="data_not_found">Data is not found</string>
+    <string name="take_picture_again">Take Picture Again</string>
+    <string name="permission_not_granted">Permission is not granted</string>
 </resources>

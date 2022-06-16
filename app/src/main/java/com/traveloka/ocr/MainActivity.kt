@@ -37,13 +37,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        var idToken = ""
         val user = FirebaseAuth.getInstance().currentUser
         user!!.getIdToken(true).addOnSuccessListener { result ->
             idToken = "Bearer " + result.token.toString()
             displayKtpList(idToken)
-            //Do whatever
-//            displayKtpList("Bearer $idToken")
             Log.d("Main Activity", "onCreate: $idToken")
         }
 
@@ -69,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else {
                     Log.e(TAG, "onResponse: ${response.message()}")
-                    Toast.makeText(this@MainActivity, "Data Not Found", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, getString(R.string.data_not_found), Toast.LENGTH_LONG).show()
                     setKtpData(emptyList())
                 }
             }
@@ -124,7 +121,6 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 name = query.toString()
                 displayKtpList(idToken)
-//                Toast.makeText(this@MainActivity, query, Toast.LENGTH_SHORT).show()
                 searchMenu.clearFocus()
                 return true
             }
@@ -150,16 +146,17 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu_logout -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Logout")
-                    .setMessage("Do you want to logout?")
-                    .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
-                    .setNegativeButton("No"){_,_->}
+                    .setTitle(getString(R.string.logout))
+                    .setMessage(getString(R.string.want_to_logout))
+                    .setPositiveButton(getString(R.string.yes)){ _, _ -> signOut()
+                        Toast.makeText(applicationContext, getString(R.string.success_logout), Toast.LENGTH_LONG).show()}
+                    .setNegativeButton(getString(R.string.no)){ _, _->}
                     .show()
             }
         }
         return true
     }
+
     private fun signOut() {
         Firebase.auth.signOut()
         //for facebook

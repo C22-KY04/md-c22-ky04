@@ -69,4 +69,15 @@
     <string name="id_card_success">KTP berhasil diupload!</string>
     <string name="id_card_fail">KTP gagal diupload. Silahkan coba lagi!</string>
     <string name="take_picture_first">Silahkan mengambil gambar KTP terlebih dahulu</string>
+    <string name="fail_display_camera">Gagal menampilkan kamera</string>
+    <string name="fail_take_picture">Gagal mengambil gambar</string>
+
+    <string name="logout">Keluar</string>
+    <string name="want_to_logout">Apakah Anda yakin ingin keluar?</string>
+    <string name="yes">Ya</string>
+    <string name="success_logout">Berhasil keluar akun</string>
+    <string name="no">Tidak</string>
+    <string name="data_not_found">Data tidak ditemukan</string>
+    <string name="take_picture_again">Ambil Gambar Lagi</string>
+    <string name="permission_not_granted">Izin tidak diberikan</string>
 </resources>
