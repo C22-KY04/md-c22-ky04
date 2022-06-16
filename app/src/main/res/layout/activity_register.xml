@@ -44,10 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:autofillHints="password"
+        android:fontFamily="@font/inter_medium"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:fontFamily="@font/inter_medium"
         android:textColor="@color/gray_light"
         android:textColorHint="@color/gray_light"
         app:layout_constraintEnd_toEndOf="@+id/email_regis"
@@ -86,22 +86,23 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/inter_medium"
         android:text="@string/already_have_acc"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn_regis" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="@string/data_secure"
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="4dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/data_secure"
         app:layout_constraintEnd_toEndOf="@+id/pass_regis"
         app:layout_constraintStart_toStartOf="@+id/pass_regis"
         app:layout_constraintTop_toBottomOf="@+id/pass_regis" />
@@ -110,15 +111,14 @@
         android:id="@+id/to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/login_now"
         android:textColor="@color/blue_register"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/btn_regis"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -131,8 +131,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible"/>
-
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
