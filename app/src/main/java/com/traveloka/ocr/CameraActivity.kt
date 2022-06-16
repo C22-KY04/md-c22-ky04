@@ -45,7 +45,7 @@ class CameraActivity : AppCompatActivity() {
         cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
 
-            val viewPort = ViewPort.Builder(Rational(300, 220), Surface.ROTATION_0).build()
+            val viewPort = ViewPort.Builder(Rational(3, 2), Surface.ROTATION_0).build()
 
             val preview = Preview.Builder()
                 .build()
