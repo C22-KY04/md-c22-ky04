@@ -230,7 +230,7 @@ class VerificationActivity : AppCompatActivity() {
 
             })
         } else {
-            Toast.makeText(this@VerificationActivity, "Please take picture of your ID Card first", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@VerificationActivity, getString(R.string.take_picture_first), Toast.LENGTH_LONG).show()
         }
     }
 

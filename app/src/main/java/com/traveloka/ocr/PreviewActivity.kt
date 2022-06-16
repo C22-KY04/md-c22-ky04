@@ -3,15 +3,21 @@ package com.traveloka.ocr
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.facebook.login.LoginManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.traveloka.ocr.databinding.ActivityPreviewBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PreviewActivity : AppCompatActivity() {
 
@@ -23,8 +29,19 @@ class PreviewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         title = "Preview"
+        showLoading(false)
+
+        val user = FirebaseAuth.getInstance().currentUser
+        user!!.getIdToken(true).addOnSuccessListener { result ->
+            idToken = "Bearer " + result.token.toString()
+//            Toast.makeText(this, "idToken = $idToken", Toast.LENGTH_LONG).show()
+            Log.d("PreviewActivity", "onCreate: $idToken")
+        }
 
         setOcrPreviewData()
+        binding.btnSave.setOnClickListener {
+            uploadIdCard()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -66,6 +83,9 @@ class PreviewActivity : AppCompatActivity() {
 
     private fun setOcrPreviewData() {
         val image = intent.getStringExtra(IMAGE)
+        attachment = image.toString()
+        Toast.makeText(this, "image = $attachment", Toast.LENGTH_SHORT).show()
+
         val name = intent.getStringExtra(NAME)
         val idNumber = intent.getStringExtra(ID_NUMBER)
         val placeAndDob = intent.getStringExtra(PLACE_AND_DOB)
@@ -104,12 +124,88 @@ class PreviewActivity : AppCompatActivity() {
         binding.etExpiredDate.setText(expiredDate)
     }
 
+    private fun uploadIdCard() {
+        showLoading(true)
+
+        val image = attachment
+        val name = binding.etName.text.toString()
+        val nin = binding.etNin.text.toString()
+        val placeAndDob = binding.etPlaceAndDob.text.toString()
+        val gender = binding.etGender.text.toString()
+        val bloodType = binding.etBloodType.text.toString()
+        val address = binding.etAddress.text.toString()
+        val neighborhood = binding.etNeighborhood.text.toString()
+        val village = binding.etVillage.text.toString()
+        val subDistrict = binding.etSubDistrict.text.toString()
+        val district = binding.etDistrict.text.toString()
+        val province = binding.etProvince.text.toString()
+        val religion = binding.etReligion.text.toString()
+        val maritalStatus = binding.etMaritalStatus.text.toString()
+        val occupation = binding.etOccupation.text.toString()
+        val nationality = binding.etNationality.text.toString()
+        val expiredDate = binding.etExpiredDate.text.toString()
+
+        val client = ApiConfig
+            .getIdCardsApiService()
+            .uploadIdCard(
+                idToken,
+                province,
+                district,
+                nin,
+                name,
+                placeAndDob,
+                gender,
+                bloodType,
+                address,
+                neighborhood,
+                village,
+                subDistrict,
+                religion,
+                maritalStatus,
+                occupation,
+                nationality,
+                expiredDate,
+                image
+            )
+
+        client.enqueue(object: Callback<IdCardUploadResponse> {
+            override fun onResponse(
+                call: Call<IdCardUploadResponse>,
+                response: Response<IdCardUploadResponse>
+            ) {
+                showLoading(false)
+                Toast.makeText(this@PreviewActivity, "onResponse = $response", Toast.LENGTH_LONG).show()
+                val responseBody = response.body()
+                Toast.makeText(this@PreviewActivity, "responseBody = $responseBody", Toast.LENGTH_LONG).show()
+                if(response.isSuccessful && responseBody?.status == "Created") {
+                    Toast.makeText(this@PreviewActivity, getString(R.string.id_card_success), Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@PreviewActivity, getString(R.string.id_card_fail), Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<IdCardUploadResponse>, t: Throwable) {
+                showLoading(false)
+                Toast.makeText(this@PreviewActivity, getString(R.string.id_card_fail), Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
     private fun signOut() {
         Firebase.auth.signOut()
         //for facebook
         LoginManager.getInstance().logOut()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if(isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     companion object {
@@ -130,5 +226,8 @@ class PreviewActivity : AppCompatActivity() {
         const val OCCUPATION = "occupation"
         const val NATIONALITY = "nationality"
         const val EXPIRED_DATE = "expired_date"
+
+        var attachment = "attachment"
+        var idToken = ""
     }
 }

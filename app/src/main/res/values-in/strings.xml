@@ -37,7 +37,7 @@
     <string name="dt_nin">NIK :</string>
     <string name="dt_place_dob">Tempat, Tanggal Lahir :</string>
     <string name="dt_gender">Jenis Kelamin :</string>
-    <string name="dt_blood_type">Blood Type :</string>
+    <string name="dt_blood_type">Golongan Darah :</string>
     <string name="dt_address">Alamat :</string>
     <string name="dt_religion">Agama :</string>
     <string name="dt_occupation">Pekerjaan :</string>
@@ -66,4 +66,7 @@
     <string name="detail">Detail KTP</string>
     <string name="ocr_fail">Proses OCR gagal. Silahkan coba lagi!</string>
     <string name="ocr_success">Proses OCR berhasil!</string>
+    <string name="id_card_success">KTP berhasil diupload!</string>
+    <string name="id_card_fail">KTP gagal diupload. Silahkan coba lagi!</string>
+    <string name="take_picture_first">Silahkan mengambil gambar KTP terlebih dahulu</string>
 </resources>

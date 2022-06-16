@@ -93,4 +93,7 @@
     <string name="detail">ID Card Detail</string>
     <string name="ocr_fail">Fail to process OCR. Try again!</string>
     <string name="ocr_success">OCR processing success!</string>
+    <string name="id_card_success">ID Card is uploaded successfully!</string>
+    <string name="id_card_fail">Fail to upload ID Card. Try again!</string>
+    <string name="take_picture_first">Please take picture of your ID Card first</string>
 </resources>
