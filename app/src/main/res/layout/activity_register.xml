@@ -110,6 +110,7 @@
         android:id="@+id/to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:layout_marginEnd="56dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/login_now"

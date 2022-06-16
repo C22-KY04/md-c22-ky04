@@ -15,7 +15,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@drawable/layout_border">
 
         <ImageView
             android:id="@+id/img_ktp"
@@ -29,61 +30,52 @@
             card_view:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_toEndOf="@id/img_ktp"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/dt_name"
-            android:textSize="14sp"
-            android:transitionName="nama"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/img_ktp" />
-
-        <TextView
-            android:id="@+id/ph_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/img_ktp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/ph_name"
-            android:textSize="14sp"
-            android:transitionName="nama"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/layout_border2"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/tv_name"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_name" />
-
-        <TextView
-            android:id="@+id/tv_nik"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_toEndOf="@id/img_ktp"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/dt_nin"
-            android:textSize="14sp"
-            android:transitionName="nama"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/ph_name" />
+            card_view:layout_constraintTop_toBottomOf="@+id/img_ktp">
 
-        <TextView
-            android:id="@+id/ph_nik"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/img_ktp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/ph_nin"
-            android:textSize="14sp"
-            android:transitionName="nama"
-            card_view:layout_constraintBottom_toBottomOf="@+id/tv_nik"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/tv_nik"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_nik" />
+            <TextView
+                android:id="@+id/ph_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/ph_name"
+                android:textSize="14sp"
+                android:transitionName="nama"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHorizontal_bias="0.0"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ph_nik"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/ph_nin"
+                android:textSize="14sp"
+                android:transitionName="nama"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="@+id/ph_name"
+                card_view:layout_constraintHorizontal_bias="0.0"
+                card_view:layout_constraintStart_toStartOf="@+id/ph_name"
+                card_view:layout_constraintTop_toBottomOf="@+id/ph_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
