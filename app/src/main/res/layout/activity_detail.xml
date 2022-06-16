@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_nama" />
 
     <TextView
         android:id="@+id/ph_nik"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nik" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_nik" />
 
     <TextView
         android:id="@+id/ph_ttl"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ttl" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_ttl" />
 
     <TextView
         android:id="@+id/ph_gender"
@@ -127,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_gender" />
 
     <TextView
         android:id="@+id/ph_darah"
@@ -151,7 +151,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_darah" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_darah" />
 
     <TextView
         android:id="@+id/ph_alamat"
@@ -176,7 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alamat" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_alamat" />
 
     <TextView
         android:id="@+id/ph_agama"
@@ -201,7 +201,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_agama" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_agama" />
 
     <TextView
         android:id="@+id/ph_job"
@@ -226,7 +226,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_job" />
+        app:layout_constraintTop_toBottomOf="@+id/ph_job" />
 
     <TextView
         android:id="@+id/ph_kwn"
