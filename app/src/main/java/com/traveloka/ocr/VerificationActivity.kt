@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -88,7 +89,7 @@ class VerificationActivity : AppCompatActivity() {
             }
 
             R.id.menu_languages -> {
-                //
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             }
 
             R.id.menu_logout -> {

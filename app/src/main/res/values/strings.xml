@@ -52,7 +52,7 @@
     <string name="dt_nin">NIN :</string>
     <string name="dt_place_dob">Place, Date of Birth :</string>
     <string name="dt_gender">Gender :</string>
-    <string name="dt_blood_type">Golongan Darah :</string>
+    <string name="dt_blood_type">Blood Type :</string>
     <string name="dt_address">Address :</string>
     <string name="dt_religion">Religion :</string>
     <string name="dt_occupation">Occupation :</string>
