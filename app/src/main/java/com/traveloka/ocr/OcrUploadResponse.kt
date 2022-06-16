@@ -1,6 +1,8 @@
 package com.traveloka.ocr
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class OcrUploadResponse(
 
@@ -14,56 +16,57 @@ data class OcrUploadResponse(
 	val status: String
 )
 
+@Parcelize
 data class Data(
 
 	@field:SerializedName("id_number")
-	val idNumber: String,
+	val idNumber: String? = null,
 
 	@field:SerializedName("address")
-	val address: String,
+	val address: String? = null,
 
 	@field:SerializedName("occupation")
-	val occupation: String,
+	val occupation: String? = null,
 
 	@field:SerializedName("gender")
-	val gender: String,
+	val gender: String? = null,
 
 	@field:SerializedName("expiry_date")
-	val expiryDate: String,
+	val expiryDate: String? = null,
 
 	@field:SerializedName("religion")
-	val religion: String,
+	val religion: String? = null,
 
 	@field:SerializedName("marital_status")
-	val maritalStatus: String,
+	val maritalStatus: String? = null,
 
 	@field:SerializedName("province")
-	val province: String,
+	val province: String? = null,
 
 	@field:SerializedName("nationality")
-	val nationality: String,
+	val nationality: String? = null,
 
 	@field:SerializedName("attachment")
-	val attachment: String,
+	val attachment: String? = null,
 
 	@field:SerializedName("subdistrict")
-	val subdistrict: String,
+	val subdistrict: String? = null,
 
 	@field:SerializedName("district")
-	val district: String,
+	val district: String? = null,
 
 	@field:SerializedName("blood_type")
-	val bloodType: String,
+	val bloodType: String? = null,
 
 	@field:SerializedName("name")
-	val name: String,
+	val name: String? = null,
 
 	@field:SerializedName("place_date_of_birth")
 	val placeDateOfBirth: String,
 
 	@field:SerializedName("neighborhood")
-	val neighborhood: String,
+	val neighborhood: String? = null,
 
 	@field:SerializedName("village")
-	val village: String
-)
+	val village: String? = null
+) : Parcelable

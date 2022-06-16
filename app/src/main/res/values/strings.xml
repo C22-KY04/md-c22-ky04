@@ -52,7 +52,7 @@
     <string name="dt_nin">NIK :</string>
     <string name="dt_place_dob">Place, Date of Birth :</string>
     <string name="dt_gender">Gender :</string>
-    <string name="dt_blood_type">Golongan Darah :</string>
+    <string name="dt_blood_type">Blood Type :</string>
     <string name="dt_address">Address :</string>
     <string name="dt_religion">Religion :</string>
     <string name="dt_occupation">Occupation :</string>
@@ -91,4 +91,9 @@
     <string name="process_ocr">Processing OCR</string>
     <string name="save">Save</string>
     <string name="detail">ID Card Detail</string>
+    <string name="ocr_fail">Fail to process OCR. Try again!</string>
+    <string name="ocr_success">OCR processing success!</string>
+    <string name="id_card_success">ID Card is uploaded successfully!</string>
+    <string name="id_card_fail">Fail to upload ID Card. Try again!</string>
+    <string name="take_picture_first">Please take picture of your ID Card first</string>
 </resources>
