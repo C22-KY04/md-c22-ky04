@@ -15,10 +15,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97136d31-1d34-480f-a406-d9620513f8f2" name="Default Changelist" comment="Update string resources">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="97136d31-1d34-480f-a406-d9620513f8f2" name="Default Changelist" comment="Change Crop and ViewPort size of CameraX result">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/CameraActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/CameraActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/VerificationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/traveloka/ocr/VerificationActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655303256734</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Change Crop and ViewPort size of CameraX result">
+      <created>1655354711331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655354711331</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +277,7 @@
     <MESSAGE value="little update" />
     <MESSAGE value="add strings.xml(in) &amp; update logout" />
     <MESSAGE value="Implement OCR API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement OCR API" />
+    <MESSAGE value="Change Crop and ViewPort size of CameraX result" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Crop and ViewPort size of CameraX result" />
   </component>
 </project>

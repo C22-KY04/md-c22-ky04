@@ -10,8 +10,8 @@
 
     <androidx.camera.view.PreviewView
         android:id="@+id/view_finder"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="330dp"
+        android:layout_height="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +20,8 @@
 
     <View
         android:id="@+id/camera_border"
-        android:layout_width="312dp"
-        android:layout_height="212dp"
+        android:layout_width="342dp"
+        android:layout_height="232dp"
         android:background="@drawable/camera_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
