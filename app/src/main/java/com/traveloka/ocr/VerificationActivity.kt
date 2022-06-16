@@ -196,20 +196,41 @@ class VerificationActivity : AppCompatActivity() {
                     val responseBody = response.body()
                     Toast.makeText(this@VerificationActivity, "Data = $responseBody", Toast.LENGTH_LONG).show()
                     if(response.isSuccessful && responseBody?.status == "OK") {
-                        Toast.makeText(this@VerificationActivity, "Data = $responseBody", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@VerificationActivity, getString(R.string.ocr_success), Toast.LENGTH_LONG).show()
+
+                        val intent = Intent(this@VerificationActivity, PreviewActivity::class.java)
+                        intent.putExtra(PreviewActivity.IMAGE, responseBody.data.attachment)
+                        intent.putExtra(PreviewActivity.NAME, responseBody.data.name)
+                        intent.putExtra(PreviewActivity.ID_NUMBER, responseBody.data.idNumber)
+                        intent.putExtra(PreviewActivity.PLACE_AND_DOB, responseBody.data.placeDateOfBirth)
+                        intent.putExtra(PreviewActivity.GENDER, responseBody.data.gender)
+                        intent.putExtra(PreviewActivity.BLOOD_TYPE, responseBody.data.bloodType)
+                        intent.putExtra(PreviewActivity.ADDRESS, responseBody.data.address)
+                        intent.putExtra(PreviewActivity.NEIGHBORHOOD, responseBody.data.neighborhood)
+                        intent.putExtra(PreviewActivity.VILLAGE, responseBody.data.village)
+                        intent.putExtra(PreviewActivity.SUB_DISTRICT, responseBody.data.subdistrict)
+                        intent.putExtra(PreviewActivity.DISTRICT, responseBody.data.district)
+                        intent.putExtra(PreviewActivity.PROVINCE, responseBody.data.province)
+                        intent.putExtra(PreviewActivity.RELIGION, responseBody.data.religion)
+                        intent.putExtra(PreviewActivity.MARITAL_STATUS, responseBody.data.maritalStatus)
+                        intent.putExtra(PreviewActivity.OCCUPATION, responseBody.data.occupation)
+                        intent.putExtra(PreviewActivity.NATIONALITY, responseBody.data.nationality)
+                        intent.putExtra(PreviewActivity.EXPIRED_DATE, responseBody.data.expiryDate)
+                        startActivity(intent)
+
                     } else {
-                        Toast.makeText(this@VerificationActivity, "Fail 1", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@VerificationActivity, getString(R.string.ocr_fail), Toast.LENGTH_LONG).show()
                     }
                 }
 
                 override fun onFailure(call: Call<OcrUploadResponse>, t: Throwable) {
                     showLoading(false)
-                    Toast.makeText(this@VerificationActivity, "Fail 2", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@VerificationActivity, getString(R.string.ocr_fail), Toast.LENGTH_LONG).show()
                 }
 
             })
         } else {
-            Toast.makeText(this@VerificationActivity, "Please take picture of your ID Card first", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@VerificationActivity, "Please take picture of your ID Card first", Toast.LENGTH_LONG).show()
         }
     }
 

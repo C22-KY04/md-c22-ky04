@@ -91,4 +91,6 @@
     <string name="process_ocr">Processing OCR</string>
     <string name="save">Save</string>
     <string name="detail">ID Card Detail</string>
+    <string name="ocr_fail">Fail to process OCR. Try again!</string>
+    <string name="ocr_success">OCR processing success!</string>
 </resources>

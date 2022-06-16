@@ -65,28 +65,29 @@ class PreviewActivity : AppCompatActivity() {
     }
 
     private fun setOcrPreviewData() {
-        val name = "Aimar Wibowo"
-        val nik = "3376011005010002"
-        val placeAndDob = "Tegal, 10 Mei 2001"
-        val gender = "Laki - Laki"
-        val bloodType = "B"
-        val address = "Jalan Kapten Piere Tendean No. 10"
-        val neighborhood = "008 / 009"
-        val village = "Tegal Sari"
-        val subDistrict = "Tegal Barat"
-        val district = "Kota Tegal"
-        val province = "Jawa Tengah"
-        val religion = "Katholik"
-        val maritalStatus = "Belum Kawin"
-        val occupation = "Pelajar / Mahasiswa"
-        val nationality = "WNI"
-        val expiredDate = "Seumur Hidup"
+        val image = intent.getStringExtra(IMAGE)
+        val name = intent.getStringExtra(NAME)
+        val idNumber = intent.getStringExtra(ID_NUMBER)
+        val placeAndDob = intent.getStringExtra(PLACE_AND_DOB)
+        val gender = intent.getStringExtra(GENDER)
+        val bloodType = intent.getStringExtra(BLOOD_TYPE)
+        val address = intent.getStringExtra(ADDRESS)
+        val neighborhood = intent.getStringExtra(NEIGHBORHOOD)
+        val village = intent.getStringExtra(VILLAGE)
+        val subDistrict = intent.getStringExtra(SUB_DISTRICT)
+        val district = intent.getStringExtra(DISTRICT)
+        val province = intent.getStringExtra(PROVINCE)
+        val religion = intent.getStringExtra(RELIGION)
+        val maritalStatus = intent.getStringExtra(MARITAL_STATUS)
+        val occupation = intent.getStringExtra(OCCUPATION)
+        val nationality = intent.getStringExtra(NATIONALITY)
+        val expiredDate = intent.getStringExtra(EXPIRED_DATE)
 
         Glide.with(this)
-            .load("https://about.lovia.life/wp-content/uploads/2020/05/ktp-1024x660.jpg")
+            .load(image)
             .into(binding.imgPhoto)
         binding.etName.setText(name)
-        binding.etNin.setText(nik)
+        binding.etNin.setText(idNumber)
         binding.etPlaceAndDob.setText(placeAndDob)
         binding.etGender.setText(gender)
         binding.etBloodType.setText(bloodType)
@@ -109,5 +110,25 @@ class PreviewActivity : AppCompatActivity() {
         LoginManager.getInstance().logOut()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    companion object {
+        const val IMAGE = "image"
+        const val NAME = "name"
+        const val ID_NUMBER = "id_number"
+        const val PLACE_AND_DOB = "place_and_dob"
+        const val GENDER = "gender"
+        const val BLOOD_TYPE = "blood_type"
+        const val ADDRESS = "address"
+        const val NEIGHBORHOOD = "neighborhood"
+        const val VILLAGE = "village"
+        const val SUB_DISTRICT = "sub_district"
+        const val DISTRICT = "district"
+        const val PROVINCE = "province"
+        const val RELIGION = "religion"
+        const val MARITAL_STATUS = "marital_status"
+        const val OCCUPATION = "occupation"
+        const val NATIONALITY = "nationality"
+        const val EXPIRED_DATE = "expired_date"
     }
 }

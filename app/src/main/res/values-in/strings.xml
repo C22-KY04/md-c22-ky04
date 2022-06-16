@@ -64,4 +64,6 @@
     <string name="process_ocr">Memproses OCR</string>
     <string name="save">Simpan</string>
     <string name="detail">Detail KTP</string>
+    <string name="ocr_fail">Proses OCR gagal. Silahkan coba lagi!</string>
+    <string name="ocr_success">Proses OCR berhasil!</string>
 </resources>
