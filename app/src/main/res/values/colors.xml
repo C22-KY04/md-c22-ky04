@@ -18,4 +18,5 @@
     <color name="blue_register">#0D7FCC</color>
 
     <color name="gray_light">#626262</color>
+    <color name="gray_soft">#F0F0F0</color>
 </resources>

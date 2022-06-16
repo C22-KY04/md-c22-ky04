@@ -49,7 +49,7 @@
 
     //Detail
     <string name="dt_name">Name :</string>
-    <string name="dt_nin">NIN :</string>
+    <string name="dt_nin">NIK :</string>
     <string name="dt_place_dob">Place, Date of Birth :</string>
     <string name="dt_gender">Gender :</string>
     <string name="dt_blood_type">Golongan Darah :</string>
