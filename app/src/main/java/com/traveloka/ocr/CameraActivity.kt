@@ -1,6 +1,5 @@
 package com.traveloka.ocr
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +11,6 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.camera.core.*
-import androidx.camera.core.impl.utils.Exif
-import androidx.camera.core.internal.compat.workaround.ExifRotationAvailability
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.traveloka.ocr.databinding.ActivityCameraBinding
@@ -69,14 +66,12 @@ class CameraActivity : AppCompatActivity() {
                     this,
                     cameraSelector,
                     useCaseGroup,
-                    //preview,
-                    //imageCapture
                 )
 
             } catch (exc: Exception) {
                 Toast.makeText(
                     this@CameraActivity,
-                    "Failed to display camera.",
+                    getString(R.string.fail_display_camera),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -95,7 +90,7 @@ class CameraActivity : AppCompatActivity() {
                 override fun onError(exc: ImageCaptureException) {
                     Toast.makeText(
                         this@CameraActivity,
-                        "Failed to take a picture.",
+                        getString(R.string.fail_take_picture),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

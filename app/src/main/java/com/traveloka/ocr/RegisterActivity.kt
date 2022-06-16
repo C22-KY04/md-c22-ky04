@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         showLoading(false)
-        supportActionBar?.setTitle(R.string.register);
+        supportActionBar?.setTitle(R.string.register)
         emailValidate()
         passwordValidate()
 

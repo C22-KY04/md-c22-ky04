@@ -29,7 +29,7 @@ class DetailActivity : AppCompatActivity() {
 
         title = getString(R.string.detail)
 
-        tampilData()
+        showData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -58,18 +58,18 @@ class DetailActivity : AppCompatActivity() {
 
             R.id.menu_logout -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Logout")
-                    .setMessage("Do you want to logout?")
-                    .setPositiveButton("Yes"){_, _ -> signOut()
-                        Toast.makeText(applicationContext, "Account logged out", Toast.LENGTH_LONG).show()}
-                    .setNegativeButton("No"){_,_->}
+                    .setTitle(getString(R.string.logout))
+                    .setMessage(getString(R.string.want_to_logout))
+                    .setPositiveButton(getString(R.string.yes)){ _, _ -> signOut()
+                        Toast.makeText(applicationContext, getString(R.string.success_logout), Toast.LENGTH_LONG).show()}
+                    .setNegativeButton(getString(R.string.no)){ _, _->}
                     .show()
             }
         }
         return true
     }
 
-    private fun tampilData(){
+    private fun showData(){
         val ktp = intent.getParcelableExtra<DataItem>("EXTRA_DETAIL") as DataItem
         Glide.with(applicationContext)
             .load(ktp.attachment)

@@ -1,11 +1,9 @@
 package com.traveloka.ocr
 
 import android.app.Application
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import android.os.Environment
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -18,11 +16,6 @@ val timeStamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
-
-fun createTempFile(context: Context): File {
-    val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
-}
 
 fun createFile(application: Application): File {
     val mediaDir = application.externalMediaDirs.firstOrNull()?.let {

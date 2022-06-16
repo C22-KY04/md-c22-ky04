@@ -22,6 +22,24 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
+        <Button
+            android:id="@+id/btn_take_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/take_picture_again"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_photo"
+            app:strokeColor="@color/orange_1"
+            app:strokeWidth="2dp" />
+
         <!-- Name -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_name"
@@ -34,7 +52,7 @@
             android:hint="@string/preview_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_photo">
+            app:layout_constraintTop_toBottomOf="@+id/btn_take_picture">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_name"
