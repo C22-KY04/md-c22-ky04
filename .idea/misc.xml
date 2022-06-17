@@ -10,6 +10,7 @@
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/ic_google.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/ic_lock.xml" value="0.1" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/layout_border2.xml" value="0.221" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/line.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable-v24/rectangle.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/ic_add_card.xml" value="0.1" />
@@ -18,16 +19,20 @@
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/ic_check.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/ic_search.xml" value="0.174" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/layout_border.xml" value="0.221" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/myrect.xml" value="0.221" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/drawable/rectangle2.xml" value="0.231" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout-land/activity_login.xml" value="0.25" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_camera.xml" value="0.18127404873877725" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_detail.xml" value="0.18426678067550234" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_login.xml" value="0.18" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_main.xml" value="0.67" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_preview.xml" value="0.25" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_verification.xml" value="0.22447916666666667" />
         <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/activity_verified.xml" value="0.18127404873877725" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/item_row.xml" value="0.22" />
-        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/menu/option_menu.xml" value="0.18426678067550234" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/layout/item_row.xml" value="0.33" />
+        <entry key="..\:/ProjekAndroidStudio/md-c22-ky04/app/src/main/res/menu/option_menu.xml" value="0.33" />
         <entry key="..\:/TestAndroidStudio/Bangkit/md-c22-ky04/app/src/main/res/drawable-v24/background_button1.xml" value="0.1275" />
         <entry key="..\:/TestAndroidStudio/Bangkit/md-c22-ky04/app/src/main/res/drawable-v24/background_button2.xml" value="0.1275" />
         <entry key="..\:/TestAndroidStudio/Bangkit/md-c22-ky04/app/src/main/res/drawable-v24/background_button3.xml" value="0.1275" />
@@ -59,12 +64,7 @@
         <entry key="..\:/TestAndroidStudio/md-c22-ky04_prasetya/app/src/main/res/layout/item_row.xml" value="0.19581017528858485" />
         <entry key="..\:/TestAndroidStudio/md-c22-ky04_prasetya/app/src/main/res/menu/option_menu.xml" value="0.19581017528858485" />
         <entry key="app/src/main/res/drawable/camera_border.xml" value="0.215" />
-        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.17699871740059855" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17699871740059855" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_preview.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_verification.xml" value="0.17699871740059855" />
         <entry key="app/src/main/res/layout/item_row.xml" value="0.33" />
       </map>
     </option>

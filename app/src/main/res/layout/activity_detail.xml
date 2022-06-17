@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,8 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="32dp">
+        android:layout_height="wrap_content">
 
     <ImageView
             android:id="@+id/imageView"
@@ -29,9 +27,9 @@
             android:id="@+id/tv_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_name"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.043"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,210 +39,171 @@
             android:id="@+id/ph_nama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_nama"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintStart_toStartOf="@+id/tv_nama"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
 
         <TextView
             android:id="@+id/tv_nik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_nin"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_nama"
             app:layout_constraintTop_toBottomOf="@+id/ph_nama" />
 
         <TextView
             android:id="@+id/ph_nik"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_nin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_nik"
-            app:layout_constraintTop_toBottomOf="@+id/ph_nama" />
+            app:layout_constraintStart_toStartOf="@+id/tv_nik"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nik" />
 
         <TextView
             android:id="@+id/tv_ttl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_place_dob"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_nik"
             app:layout_constraintTop_toBottomOf="@+id/ph_nik" />
 
         <TextView
             android:id="@+id/ph_ttl"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_place_dob"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_ttl"
-            app:layout_constraintTop_toBottomOf="@+id/ph_nik" />
+            app:layout_constraintStart_toStartOf="@+id/tv_ttl"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ttl" />
 
         <TextView
             android:id="@+id/tv_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_gender"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_ttl"
             app:layout_constraintTop_toBottomOf="@+id/ph_ttl" />
 
         <TextView
             android:id="@+id/ph_gender"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_gender"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_gender"
-            app:layout_constraintTop_toBottomOf="@+id/ph_ttl" />
+            app:layout_constraintStart_toStartOf="@+id/tv_gender"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
 
         <TextView
             android:id="@+id/tv_darah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_blood_type"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_gender"
             app:layout_constraintTop_toBottomOf="@+id/ph_gender" />
 
         <TextView
             android:id="@+id/ph_darah"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_blood_type"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_darah"
-            app:layout_constraintTop_toBottomOf="@+id/ph_gender" />
+            app:layout_constraintStart_toStartOf="@+id/tv_darah"
+            app:layout_constraintTop_toBottomOf="@+id/tv_darah" />
 
         <TextView
             android:id="@+id/tv_alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_address"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_darah"
             app:layout_constraintTop_toBottomOf="@+id/ph_darah" />
 
         <TextView
             android:id="@+id/ph_alamat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_address"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_alamat"
-            app:layout_constraintTop_toBottomOf="@+id/ph_darah" />
+            app:layout_constraintStart_toStartOf="@+id/tv_alamat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_alamat" />
 
         <TextView
             android:id="@+id/tv_agama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_religion"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_alamat"
             app:layout_constraintTop_toBottomOf="@+id/ph_alamat" />
 
         <TextView
             android:id="@+id/ph_agama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_religion"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_agama"
-            app:layout_constraintTop_toBottomOf="@+id/ph_alamat" />
+            app:layout_constraintStart_toStartOf="@+id/tv_agama"
+            app:layout_constraintTop_toBottomOf="@+id/tv_agama" />
 
         <TextView
             android:id="@+id/tv_job"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_occupation"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_agama"
             app:layout_constraintTop_toBottomOf="@+id/ph_agama" />
 
         <TextView
             android:id="@+id/ph_job"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_occupation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_job"
-            app:layout_constraintTop_toBottomOf="@+id/ph_agama" />
+            app:layout_constraintStart_toStartOf="@+id/tv_job"
+            app:layout_constraintTop_toBottomOf="@+id/tv_job" />
 
         <TextView
             android:id="@+id/tv_kwn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/dt_nationality"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.054"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ph_job"
             app:layout_constraintTop_toBottomOf="@+id/ph_job" />
 
         <TextView
             android:id="@+id/ph_kwn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
             android:text="@string/ph_nationality"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_kwn"
-            app:layout_constraintTop_toBottomOf="@+id/ph_job" />
+            app:layout_constraintStart_toStartOf="@+id/tv_kwn"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kwn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var googleSignInClient: GoogleSignInClient
+    private var defaultList = listOf<DataItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "onResponse: $responseBody")
                     if(responseBody != null) {
                         setKtpData(responseBody.data)
+                        if(defaultList.isEmpty()){
+                            defaultList = responseBody.data
+                        }
                     }
                 } else {
                     Log.e(TAG, "onResponse: ${response.message()}")
@@ -119,14 +123,23 @@ class MainActivity : AppCompatActivity() {
         searchMenu.queryHint = resources.getString(R.string.search_hint)
         searchMenu.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                name = query.toString()
-                displayKtpList(idToken)
-                searchMenu.clearFocus()
+                if(query == null){
+                    setKtpData(defaultList)
+                    Toast.makeText(this@MainActivity, getString(R.string.data_not_found) + defaultList.toString(), Toast.LENGTH_LONG).show()
+                }else{
+                    name = query.toString()
+                    displayKtpList(idToken)
+                    searchMenu.clearFocus()
+                }
+
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                return false
+                if(newText.isNullOrEmpty()){
+                    setKtpData(defaultList)
+                }
+                return true
             }
         })
 
