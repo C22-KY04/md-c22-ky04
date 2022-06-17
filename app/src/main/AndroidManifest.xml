@@ -28,10 +28,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VerifiedActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".VerificationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
