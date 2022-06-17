@@ -21,7 +21,7 @@
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/use_camera"
+        android:text="@string/use_camera_or_gallery"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/blue_1"
@@ -29,6 +29,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_card" />
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/gallery"
+        android:textAllCaps="false"
+        android:textColor="@color/orange_1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gallery_or_camera"
+        app:strokeColor="@color/orange_1"
+        app:strokeWidth="2dp" />
 
     <Button
         android:id="@+id/btn_camera"
@@ -42,7 +60,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_gallery_or_camera"
         app:strokeColor="@color/orange_1"

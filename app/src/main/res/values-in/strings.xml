@@ -25,7 +25,7 @@
     <string name="menu_search">Cari</string>
     <string name="search_hint">Cari nama ...</string>
     <string name="verify_id_card">Verifikasi KTP</string>
-    <string name="use_camera">"Gunakan kamera untuk mengambil gambar KTP "</string>
+    <string name="use_camera_or_gallery">"Gunakan kamera atau galeri untuk mengambil gambar KTP "</string>
     <string name="gallery">Galeri</string>
     <string name="camera">Kamera</string>
     <string name="ktp_verified">KTP telah terverifikasi</string>
