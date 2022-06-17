@@ -3,9 +3,8 @@
     <string name="app_name">Traveloka OCR</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
-    <string name="other">Atau masuk dengan</string>
+    <string name="other">Atau</string>
     <string name="login_google">Masuk dengan Google</string>
-    <string name="login_fb">Masuk dengan Facebook</string>
     <string name="name">Nama</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

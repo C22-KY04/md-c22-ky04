@@ -3,7 +3,7 @@
 
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="other">Or login with</string>
+    <string name="other">Or</string>
     <string name="login_google">Continue with Google</string>
 
     <string name="name">Name</string>
