@@ -80,4 +80,5 @@
     <string name="data_not_found">Data tidak ditemukan</string>
     <string name="take_picture_again">Ambil Gambar Lagi</string>
     <string name="permission_not_granted">Izin tidak diberikan</string>
+    <string name="choose_picture">Pilih foto KTP Anda</string>
 </resources>

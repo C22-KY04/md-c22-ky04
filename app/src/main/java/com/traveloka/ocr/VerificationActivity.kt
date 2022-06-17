@@ -2,9 +2,11 @@ package com.traveloka.ocr
 
 import android.Manifest
 import android.content.Intent
+import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
@@ -63,6 +65,7 @@ class VerificationActivity : AppCompatActivity() {
         }
 
         binding.btnCamera.setOnClickListener { startCameraX() }
+        binding.btnGallery.setOnClickListener { startGallery() }
         binding.btnProcess.setOnClickListener {
             processingOcr()
         }
@@ -148,6 +151,14 @@ class VerificationActivity : AppCompatActivity() {
         launcherIntentCameraX.launch(intent)
     }
 
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, getString(R.string.choose_picture))
+        launcherIntentGallery.launch(chooser)
+    }
+
     private val launcherIntentCameraX = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
@@ -169,6 +180,18 @@ class VerificationActivity : AppCompatActivity() {
                 else -> bitmap
             }
             binding.imgCard.setImageBitmap(rotatedBitmap)
+        }
+    }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+            val myFile = uriToFile(selectedImg, this@VerificationActivity)
+            getFile = myFile
+
+            binding.imgCard.setImageURI(selectedImg)
         }
     }
 

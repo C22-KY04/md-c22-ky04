@@ -106,4 +106,5 @@
     <string name="data_not_found">Data is not found</string>
     <string name="take_picture_again">Take Picture Again</string>
     <string name="permission_not_granted">Permission is not granted</string>
+    <string name="choose_picture">Choose your ID Card picture</string>
 </resources>
