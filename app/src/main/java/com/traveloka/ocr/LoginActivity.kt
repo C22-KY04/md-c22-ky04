@@ -8,9 +8,6 @@ import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
-import com.facebook.*
-import com.facebook.appevents.AppEventsLogger
-import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +16,6 @@ import com.google.firebase.ktx.Firebase
 import com.traveloka.ocr.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
@@ -27,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var callbackManager: CallbackManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,10 +50,6 @@ class LoginActivity : AppCompatActivity() {
             googleSignIn()
         }
 
-        binding.buttonFb.setOnClickListener{
-            binding.buttonFb2.callOnClick()
-        }
-
         binding.toRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
             finish()
@@ -72,24 +63,6 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        //facebook
-        FacebookSdk.sdkInitialize(getApplicationContext())
-        AppEventsLogger.activateApp(this)
-        callbackManager = CallbackManager.Factory.create()
-        binding.buttonFb2.setReadPermissions("email", "public_profile")
-        binding.buttonFb2.registerCallback(callbackManager, object :
-            FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                handleFacebookAccessToken(loginResult.accessToken)
-                showLoading(true)
-            }
-            override fun onCancel() {
-                Log.d(TAG, "facebook:onCancel")
-            }
-            override fun onError(error: FacebookException) {
-                Log.d(TAG, "facebook:onError", error)
-            }
-        })
     }
 
     //login with email
@@ -116,23 +89,8 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    //login with facebook
-    private fun handleFacebookAccessToken(token: AccessToken) {
-        val credential = FacebookAuthProvider.getCredential(token.token)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(baseContext, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
-                }
-                reload()
-                showLoading(false)
-            }
-    }
 
-    //onActivityResult for google and facebook
+    //onActivityResult for google
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN) {
@@ -145,8 +103,6 @@ class LoginActivity : AppCompatActivity() {
                 Log.w(TAG, "Google Sign In Failed", e)
             }
         }
-        else{
-            callbackManager.onActivityResult(requestCode, resultCode, data)        }
     }
 
     //login with google

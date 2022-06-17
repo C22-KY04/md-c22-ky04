@@ -5,7 +5,6 @@
     <string name="register">Register</string>
     <string name="other">Or login with</string>
     <string name="login_google">Continue with Google</string>
-    <string name="login_fb">Sign In with Facebook</string>
 
     <string name="name">Name</string>
     <string name="email">Email</string>
@@ -25,9 +24,6 @@
     <string name="already_have_acc">Already have an account?</string>
     <string name="login_now">Login now</string>
 
-    <string name="facebook_app_id" translatable="false">724703425240398</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb1234</string>
-    <string name="facebook_client_token" translatable="false">8100ad10640c5082f81bc30e09e9eec3</string>
 
     <string name="data_secure">Your data will be protected and will not be shared.</string>
 
