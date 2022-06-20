@@ -6,6 +6,7 @@
 3. Run the application
 
 ## Application Flow
+![My Image](images/Application Flow.jpg)
 
 ## Technology and Library
 1. CameraX
